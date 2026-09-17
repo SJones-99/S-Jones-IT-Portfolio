@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S Jones | IT Support Specialist</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050b18;
+    color: white;
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(5,11,24,.95);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #2563eb,
+        #06b6d4
+    );
+}
+
+.hero h1 {
+    font-size: 70px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    color: #e0f2fe;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+.hero p {
+    max-width: 800px;
+    font-size: 20px;
+    margin: 25px auto;
+}
+
+/* BUTTONS */
+
+button,
+.button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    transition: .3s;
+}
+
+button:hover,
+.button:hover {
+    background: #06b6d4;
+    transform: translateY(-3px);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 100px 10%;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    color: #38bdf8;
+    margin-bottom: 40px;
+}
+
+/* ABOUT */
+
+.about-text {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    font-size: 19px;
+}
+
+/* CARDS */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    gap: 30px;
+}
+
+.card {
+    background: #111827;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #1e40af;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #2563eb;
+}
+
+.card h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+/* SKILLS */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill {
+    background: #2563eb;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: .3s;
+}
+
+.skill:hover {
+    background: #06b6d4;
+    transform: scale(1.05);
+}
+
+/* VIDEO */
+
+.video-container {
+    max-width: 900px;
+    margin: auto;
+    background: #111827;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #1e40af;
+}
+
+.video-container video {
+    width: 100%;
+    max-height: 600px;
+    border-radius: 15px;
+}
+
+/* CONTACT */
+
+.contact-card {
+    text-align: center;
+}
+
+.contact-card a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    color: #06b6d4;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-box {
+    background: #111827;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #2563eb;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background: #020617;
+    padding: 30px;
+    color: #94a3b8;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        S Jones
+    </div>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#presentation">Presentation</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <div>
+
+        <h1>S Jones</h1>
+
+        <h2>IT Support Specialist</h2>
+
+        <p>
+            Technical professional with hands-on training in
+            computer support, networking, cybersecurity,
+            cloud technologies, and system troubleshooting.
+        </p>
+
+        <!-- RESUME -->
+
+        <a
+            href="SAHAR_JONES_Resume.docx"
+            class="button"
+            download
+        >
+            📄 Download Resume
+        </a>
+
+        <!-- LINKEDIN -->
+
+        <a
+            href="https://www.linkedin.com/in/sahar-jones"
+            class="button"
+            target="_blank"
+        >
+            💼 LinkedIn
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="title">
+        About Me
+    </h2>
+
+    <p class="about-text">
+
+        I am an IT Support Specialist with technical training
+        and practical experience building computer labs,
+        troubleshooting systems, configuring networks,
+        and supporting technology environments.
+
+        <br><br>
+
+        My focus areas include help desk support,
+        systems administration, cybersecurity,
+        networking, and cloud technologies.
+
+    </p>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="title">
+        Technical Skills
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">Windows</div>
+
+        <div class="skill">Linux</div>
+
+        <div class="skill">Azure</div>
+
+        <div class="skill">Networking</div>
+
+        <div class="skill">Cybersecurity</div>
+
+        <div class="skill">PowerShell</div>
+
+        <div class="skill">Python</div>
+
+        <div class="skill">Active Directory</div>
+
+        <div class="skill">VMware</div>
+
+        <div class="skill">Hardware Troubleshooting</div>
+
+        <div class="skill">Help Desk Support</div>
+
+    </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+    <h2 class="title">
+        Portfolio
+    </h2>
+
+    <div class="container">
+
+
+        <!-- PROJECTS -->
+
+        <div
+            class="card"
+            onclick="openBox('projects')"
+        >
+
+            <h3>
+                💻 Projects
+            </h3>
+
+            <p>
+                View technical labs and IT projects.
+            </p>
+
+        </div>
+
+
+        <!-- PRESENTATION -->
+
+        <div
+            class="card"
+            onclick="scrollToPresentation()"
+        >
+
+            <h3>
+                🎥 Presentation
+            </h3>
+
+            <p>
+                Watch my IT presentation and technical demonstration.
+            </p>
+
+        </div>
+
+
+        <!-- CERTIFICATES -->
+
+        <div
+            class="card"
+            onclick="openBox('certificates')"
+        >
+
+            <h3>
+                📜 Certificates
+            </h3>
+
+            <p>
+                View professional certifications.
+            </p>
+
+        </div>
+
+
+        <!-- ACHIEVEMENTS -->
+
+        <div
+            class="card"
+            onclick="openBox('achievements')"
+        >
+
+            <h3>
+                🏆 Achievements
+            </h3>
+
+            <p>
+                View accomplishments and milestones.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRESENTATION VIDEO -->
+
+<section id="presentation">
+
+    <h2 class="title">
+        My IT Presentation
+    </h2>
+
+    <div class="video-container">
+
+        <video
+            controls
+            preload="metadata"
+        >
+
+            <source
+                src="presentation.MOV"
+                type="video/quicktime"
+            >
+
+            Your browser does not support video playback.
+
+        </video>
+
+        <br><br>
+
+        <p style="text-align:center;">
+
+            IT Support & Technical Presentation
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="title">
+        Contact Me
+    </h2>
+
+    <div class="container">
+
+
+        <!-- EMAIL -->
+
+        <div class="card contact-card">
+
+            <h3>
+                📧 Email
+            </h3>
+
+            <p>
+                <a href="mailto:Sahar.s.Jones@gmail.com">
+                    Sahar.s.Jones@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+
+        <!-- LINKEDIN -->
+
+        <div class="card contact-card">
+
+            <h3>
+                💼 LinkedIn
+            </h3>
+
+            <p>
+
+                <a
+                    href="https://www.linkedin.com/in/sahar-jones"
+                    target="_blank"
+                >
+
+                    linkedin.com/in/sahar-jones
+
+                </a>
+
+            </p>
+
+        </div>
+
+
+        <!-- RESUME -->
+
+        <div class="card contact-card">
+
+            <h3>
+                📄 Resume
+            </h3>
+
+            <p>
+
+                <a
+                    href="SAHAR_JONES_Resume.docx"
+                    download
+                >
+
+                    Download My Resume
+
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 S Jones | IT Support Specialist
+
+    <br>
+
+    <a
+        href="https://www.linkedin.com/in/sahar-jones"
+        target="_blank"
+        style="color:#38bdf8;"
+    >
+
+        LinkedIn
+
+    </a>
+
+</footer>
+
+
+<!-- POPUP -->
+
+<div
+    class="modal"
+    id="popup"
+>
+
+    <div class="modal-box">
+
+        <h2 id="popupTitle"></h2>
+
+        <br>
+
+        <p id="popupText"></p>
+
+        <br>
+
+        <button onclick="closeBox()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function openBox(type) {
+
+    let title = "";
+    let text = "";
+
+
+    if (type == "projects") {
+
+        title = "Projects";
+
+        text =
+        "IT Support Home Lab: Windows Server, Active Directory, VMware and troubleshooting practice. " +
+        "Network Configuration Lab: TCP/IP, DNS, DHCP and connectivity testing. " +
+        "Cloud Infrastructure Lab: Microsoft Azure virtual machines and security configuration.";
+
+    }
+
+
+    if (type == "certificates") {
+
+        title = "Certificates";
+
+        text =
+        "CompTIA A+, Google AI Essentials Certificate, and additional IT certifications will be displayed here.";
+
+    }
+
+
+    if (type == "achievements") {
+
+        title = "Achievements";
+
+        text =
+        "Completed technical training, built hands-on lab environments, developed troubleshooting skills, " +
+        "and created a professional IT portfolio.";
+
+    }
+
+
+    document.getElementById("popupTitle").innerHTML = title;
+
+    document.getElementById("popupText").innerHTML = text;
+
+    document.getElementById("popup").style.display = "flex";
+
+}
+
+
+function closeBox() {
+
+    document.getElementById("popup").style.display = "none";
+
+}
+
+
+function scrollToPresentation() {
+
+    document
+        .getElementById("presentation")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+</script>
+
+
+</body>
+</html>
